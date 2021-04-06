@@ -11,14 +11,14 @@ public class portalTeleporter : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         if (playerIsOverlapping)
         {
 
             Vector3 portalToPlayer = player.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
-
-            if (dotProduct < 0f)
+            print("dot product = " + dotProduct);
+            if (dotProduct < 0f) 
             {
                 float rotationDiff = -Quaternion.Angle(transform.rotation, reciver.rotation);
                 rotationDiff += 180;
